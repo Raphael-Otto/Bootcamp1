@@ -1,17 +1,12 @@
+<script setup>
+import HeaderComp from '@/components/template/HeaderComp.vue';
+import FooterComp from '@/components/template/FooterComp.vue';
+</script>
+
 <template>
-  <header>
-    <div class="menu-esquerdo">
-      <span> <RouterLink to="/">Home</RouterLink> </span>
-      <span>|</span>
-      <span> <RouterLink to="/times">Times</RouterLink> </span>
-      <span>|</span>
-      <span> <RouterLink to="/jogadores">Jogadores</RouterLink> </span>
-    </div>
-    <div class="menu-direito">
-      <span>Sair</span>
-    </div>
-  </header>
+  <HeaderComp />
   <RouterView />
+  <FooterComp />
 </template>
 
 <style>
@@ -26,9 +21,8 @@
   font-weight: normal;
 }
 
-header,
 footer {
-  background-color: #161b22;
+  background-color: #1b212a;
   height: 15%;
   font-size: 1.3rem;
   padding-left: 2rem;
@@ -38,11 +32,12 @@ footer {
   justify-content: space-between;
 }
 
-header span {
-  padding: 0 20px;
-}
-
 main {
   min-height: 70%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
-  <main>Bem-vindo</main>
-  <footer>Rodapé</footer>
+  <main>
+    <p>Bem-vindo</p>
+  </main>
 </template>
