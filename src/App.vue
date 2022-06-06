@@ -5,7 +5,9 @@ import FooterComp from '@/components/template/FooterComp.vue';
 
 <template>
   <HeaderComp />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
   <FooterComp />
 </template>
 
