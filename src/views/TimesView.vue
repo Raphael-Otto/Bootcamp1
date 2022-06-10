@@ -1,4 +1,5 @@
 <script>
+import { v4 as uuidv4 } from 'uuid';
 export default {
   data() {
     return {
@@ -9,7 +10,17 @@ export default {
         { id: "2311c938-42fa-4661-a3fc-9ba664a30f6e", nome: "Time 4" },
         { id: "6f58a76b-0ea0-4bca-8d93-296c7d69685c", nome: "Time 5" },
       ],
+      novo_time: "",
     };
+  },
+  methods: {
+    salvar() {
+      const novo_id = uuidv4();
+      this.times.push({
+        id: novo_id,
+        nome: this.novo_time,
+      });
+    },
   },
 };
 </script>
@@ -20,8 +31,8 @@ export default {
       <h2>Gerenciamento de Times</h2>
     </div>
     <div class="form-input">
-      <input type="text" />
-      <button>Salvar</button>
+      <input type="text" v-model="novo_time" />
+      <button @click="salvar">Salvar</button>
     </div>
     <div class="list-times">
       <table>
