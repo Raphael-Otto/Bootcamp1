@@ -1,5 +1,5 @@
+<script></script>
+
 <template>
-  <main>
-    <p>Bem-vindo</p>
-  </main>
+  <p>Salame</p>
 </template>
