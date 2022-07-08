@@ -1,35 +1,28 @@
 <script>
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4} from 'uuid';
 export default {
   data() {
     return {
       times: [
-        { id: "8ae6623d-5462-4774-b5e1-e263c5d2d367", nome: "Time 1" },
-        { id: "1f659d91-17b5-40da-b5fb-dbffa5664e27", nome: "Time 2" },
-        { id: "d5a59ada-da1d-47a2-9a6e-e99964df9571", nome: "Time 3" },
-        { id: "2311c938-42fa-4661-a3fc-9ba664a30f6e", nome: "Time 4" },
-        { id: "6f58a76b-0ea0-4bca-8d93-296c7d69685c", nome: "Time 5" },
+        { id: "8ae6623d-5462-4774-b5e1-e263c5d2d367", nome: "Paris-Saint-Germany" },
+        { id: "1f659d91-17b5-40da-b5fb-dbffa5664e27", nome: "Real Madrid" },
+        { id: "d5a59ada-da1d-47a2-9a6e-e99964df9571", nome: "Manchester-City" },
+        { id: "2311c938-42fa-4661-a3fc-9ba664a30f6e", nome: "Flamengo" },
+        { id: "6f58a76b-0ea0-4bca-8d93-296c7d69685c", nome: "Milan" },
       ],
       novo_time: "",
     };
   },
   methods: {
     salvar() {
-      if (this.novo_time !== "") {
-        const novo_id = uuidv4();
-        this.times.push({
-          id: novo_id,
-          nome: this.novo_time,
-        });
-        this.novo_time = "";
-      }
-    },
-    excluir(time) {
-      const indice = this.times.indexOf(time);
-      this.times.splice(indice, 1);
-    },
-  },
-};
+      const novo_id = uuidv4();
+      this.times.push({
+        id: novo_id,
+        nome: this.novo_time,
+          });
+        },
+      },
+    };
 </script>
 
 <template>
@@ -39,7 +32,7 @@ export default {
     </div>
     <div class="form-input">
       <input type="text" v-model="novo_time" />
-      <button @click="salvar">Adicionar</button>
+      <button @click="salvar">Salvar</button>
     </div>
     <div class="list-times">
       <table>
@@ -51,13 +44,10 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="time in times" :key="time.id">
-            <td>{{ time.id }}</td>
-            <td>{{ time.nome }}</td>
-            <td>
-              <button>Editar</button>
-              <button @click="excluir(time)">Excluir</button>
-            </td>
+          <tr v-for="times in times" :key="times.id">
+            <td>{{ times.id }}</td>
+            <td>{{ times.nome }}</td>
+            <td>??</td>
           </tr>
         </tbody>
       </table>
